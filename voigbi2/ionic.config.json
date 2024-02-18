@@ -1,0 +1,7 @@
+{
+  "name": "voigbi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

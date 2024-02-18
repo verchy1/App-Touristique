@@ -1,0 +1,115 @@
+/* Style pour le bouton J'aime en forme de cœur */
+.hearth {
+    --border-radius: 50%; /* Pour le rendre en forme de cœur */
+    --padding: 0;
+    --background-pressed: var(--ion-color-danger-tint);
+  }
+  
+  ion-icon {
+    font-size: 24px;
+  }
+  
+  /* Style pour le texte "J'aime" à côté du cœur */
+  ion-button::part(native) {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+
+.alignTxt{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  /* Styling for the card container */
+ion-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-button {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styling for the carousel slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* You can adjust the height of the slides as needed */
+}
+
+/* Styling for the text section */
+.txtEndroit {
+  background-color: #f7f7f7;
+}
+
+.txtEndroit p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.txtEndroit ion-icon {
+  margin-right: 5px;
+}
+
+.like a {
+  text-decoration: none;
+  color: #007bff; /* You can choose your desired link color */
+}
+
+/* Styling for the heart icon */
+.hearth {
+  font-size: 24px;
+}
+
+ion-toolbar {
+  background-color: white;
+}
+
+  /*modal*/
+
+    .block {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .modal {
+      --height: auto;
+    }
+
+      .cercle{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .coeur{
+      margin-right: 15px;
+    }

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="img test" slot="start" (click)="retour()">
+      <ion-icon class="icone" name="arrow-back-circle-outline"></ion-icon>
+    </div>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <div class="center header-image">
+    <div>
+      <img class="avatar" height="100px" width="100px" alt="Silhouette of a person's head"
+        src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center-Txt">
+    
+  </div>
+  <ion-content color="light">
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-icon class="orange" slot="start" name="person-circle-outline"></ion-icon>
+        <ion-label>Oba Verchy</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="orange" slot="start" name="mail-outline"></ion-icon>
+        <ion-label *ngIf="user"> {{ user.displayName || user.email }} </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="orange" slot="start" name="compass-outline"></ion-icon>
+        <ion-label >120 rue des alphes</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="orange" slot="start" name="people-outline"></ion-icon>
+        <ion-label >Masculin</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="white" (click)="setOpen(true)">
+      <ion-icon class="orange" name="create-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-buttons slot="end">
+        <ion-button (click)="setOpen(false)">Close</ion-button>
+      </ion-buttons>
+        
+        <div class="form-container">
+          <form (ngSubmit)="creation()">
+            <ion-input type="text" fill="solid" label="Nom" errorText="Invalid text" labelPlacement="floating" [(ngModel)]="nom"
+              name="nom"></ion-input>
+            <br>
+            <ion-input type="text" fill="solid" errorText="Invalid text" label="Prenom" labelPlacement="floating"
+              [(ngModel)]="prenom" name="prenom" password></ion-input>
+            <br>
+            <ion-input type="text" fill="solid" errorText="Invalid text" label="Email" labelPlacement="floating"
+              [(ngModel)]="email" name="email" email></ion-input>
+            <br>
+            <ion-input type="text" fill="solid" errorText="Invalid text" label="Adresse physique" labelPlacement="floating"
+              [(ngModel)]="AdressePhysique" name="AdressePhysique" email></ion-input>
+            <br>
+            <ion-select label="Selectionné votre genre" label-placement="floating" fill="outline" [(ngModel)]="genre"
+              name="genre">
+              <ion-select-option value="Homme">Homme</ion-select-option>
+              <ion-select-option value="Femme">Femme</ion-select-option>
+            </ion-select>
+            <br>
+            <div class="btn">
+              <ion-button class="large btn2" (click)="creation()">Enregistrer</ion-button>
+            </div>
+          </form>
+        </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+

@@ -1,0 +1,117 @@
+ion-header, ion-title {
+    background-color: #FF914D;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 0 0 35px 35px;
+    height: 100px;
+    color: aliceblue;   
+}
+
+.test {
+    background: #101010;
+    width: 200px;
+    height: 50px;
+    margin-left: 90px;
+    margin-top: -35px;
+    position: relative;
+    z-index: 9999;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/*input*/
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-input {
+    --border-color: #FF914D;
+    --border-style: solid;
+    --border-width: 1px;
+    width: 300px;
+}
+/*--------------------------------*/
+
+/*img connect*/
+.imgConnect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*--------------------*/
+
+/*bouton*/
+
+.btn2{
+    --background: #FF914D;
+    --border: 1px solid #FF914D;
+    color: rgb(255, 255, 255);
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --background-hover: #fdb284;
+    --background-activated: #fdb284;
+    --background-focused: #fdb284;
+  }
+
+  .large{
+    width: 250px;
+    --border-radius: 7px;
+  }
+
+  .btn{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .oubliePass{
+    text-align: right;
+  }
+
+  a{
+    color: #FF914D;
+    
+  }
+
+  /*hr*/
+
+
+  .hr-with-text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hr-with-text:before,
+  .hr-with-text:after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #FF914D;
+  }
+
+  .hr-with-text span {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #FF914D;
+  }
+
+  /*-------------------*/
+/*----------------------*/
+
+/*items social*/
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

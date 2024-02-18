@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <swiper-container [pagination]="{ clickable: true }">
+    <swiper-slide class="slide slide1">
+      <img src="./assets/V.gif" alt="">
+      <h2>Bienvenue sur VOIGBI</h2>
+    </swiper-slide>
+    <swiper-slide class="slide slide1">
+      <img src="./assets/ezgif.com-video-to-gif.gif" alt="">
+      <h2>VOIGBI</h2>
+      <p>Notre entreprise, VOIGBI, est spécialisée dans l'exploration de destinations incroyables à travers le pays.</p>
+    </swiper-slide>
+    <swiper-slide class="slide slide2">
+      <img src="./assets/ezgif.com-video-to-gif (1).gif" alt="">
+      <h2>Notre Mission</h2>
+      <p>Notre mission est de créer des expériences de tourisme uniques qui captivent les cœurs et les esprits de nos clients.</p>
+    </swiper-slide>
+    <swiper-slide class="slide slide3">
+      <img src="./assets/ezgif.com-video-to-gif (2).gif" alt="">
+      <h2>Nos Services</h2>
+      <p>Nous offrons une gamme complète de services touristiques, allant des exploration d'aventure en pleine ville aux visites culturelles.</p>
+    </swiper-slide>
+    <swiper-slide class="slide slide4">
+      <img src="./assets/V.png" alt="">
+      <div class="auth">
+        <div class="btn">
+          <ion-button class="large btn1" [routerLink]="['/connexion']">Connexion</ion-button>
+        </div>
+        <div class="hr-with-text btn">
+          <span>OU</span>
+        </div>
+        <div class="btn">
+          <ion-button class="large btn2" [routerLink]="['/inscription']">Crée un compte</ion-button>
+        </div>
+      </div>
+      <p class="nextTXT" (click)="passer()">passé</p>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
+

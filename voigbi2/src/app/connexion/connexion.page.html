@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="test">
+    <p>Connexion</p>
+  </div>
+
+  <div class="imgConnect">
+    <img src="./assets/connect.gif" height="250px" width="250px">
+  </div>
+  <div class="form-container">
+    <form (ngSubmit)="connect()" >
+      <ion-input type="email" fill="solid" label="Email" labelPlacement="floating" [(ngModel)]="email" name="email" errorText="Invalid email"  email></ion-input>
+      <br>
+      <ion-input type="password" fill="solid" label="Mot de passe" labelPlacement="floating" [(ngModel)]="password" name="password"  errorText="Invalid password" password></ion-input>
+      <div class="oubliePass">
+        <a>Mot de passe oublié</a>
+      </div>
+      <div class="btn">
+        <ion-button class="large btn2" (click)="connect()">Se connecter</ion-button>
+      </div>
+      <div class="hr-with-text btn">
+        <span>se connecter avec</span>
+      </div>
+    </form>
+    <div class="social">
+      <div class="itemSocial">
+        <img src="./assets/gmail.png" alt="" height="50px" width="50px">
+      </div>
+      <div class="itemSocial">
+        <img src="./assets/apple.png" alt="" height="50px" width="50px">
+      </div>
+    </div>
+    <a>j'ai deja un compte</a>
+  </div>
+  
+</ion-content>

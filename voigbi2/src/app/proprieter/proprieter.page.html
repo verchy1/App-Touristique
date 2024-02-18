@@ -1,0 +1,290 @@
+
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <img src="./assets/V-removebg-preview.png" alt="" height="60px" width="60px">
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item button>
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label *ngIf="user" (click)="profile()"> {{ user.displayName || user.email }} </ion-label>
+        <ion-label *ngIf="!user" (click)="connection()">Connecter vous</ion-label>
+      </ion-item>
+      <ion-item button detail="true" detail-icon="caret-forward-outline">
+        <ion-icon slot="start" name="home-outline"></ion-icon>
+        <ion-label (click)="home()">Aceuil</ion-label>
+      </ion-item>
+
+      <ion-item button  *ngIf="user" detail="true" detail-icon="caret-forward-outline" id="open-modal" expand="block">
+        <ion-icon slot="start" name="notifications-outline"></ion-icon>
+        <ion-badge slot="end">0</ion-badge>
+        <ion-label>Notifications</ion-label>
+      </ion-item>
+      <ion-item button *ngIf="!user" detail="true" detail-icon="caret-forward-outline" id="open-modal" expand="block">
+        <ion-icon slot="start" name="notifications-outline"></ion-icon>
+        <ion-label>Non connecter</ion-label>
+      </ion-item>
+      <ion-modal *ngIf="user" class = "modal" trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+        <ng-template>
+          <div class="block" *ngIf="user">Aucune notification</div>
+          <div class="block" *ngIf="!user">Non connecter</div>
+        </ng-template>
+      </ion-modal>
+      <ion-modal *ngIf="!user" class="modal" trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+        <ng-template>
+          <div class="block" *ngIf="user">Aucune notification</div>
+          <div class="block" *ngIf="!user">Non connecter</div>
+        </ng-template>
+      </ion-modal>
+      <ion-item button detail="true" detail-icon="caret-forward-outline" >
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        <ion-label *ngIf="user" (click)="deconnect()">Deconnexion</ion-label>
+        <ion-label *ngIf="!user" (click)="connection()">Se connecter</ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <div class="img" slot="end">
+          <img src="./assets/V-removebg-preview.png" alt="" height="60px" width="60px">
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div class="contenu">
+
+        <ion-card >
+          <swiper-container [pagination]="{ clickable: true }">
+            <swiper-slide>
+              <img src="./assets/pexels-darya-sannikova-17501696.jpg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (1).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (2).jpeg" alt="">
+            </swiper-slide>
+          </swiper-container>
+          
+          <div class="alignTxt">
+            <p><ion-icon name="pin-outline"></ion-icon>Bar restaurant</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="flag-outline"></ion-icon>Chez alpha</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="location"></ion-icon>Centre ville</p>
+            <div class="like">
+              <ion-fab class="cercle" slot="fixed" vertical="top" horizontal="end">
+                <ion-button (click)="toggleLike()" fill="clear" [color]="isLiked ? 'danger' : 'medium'">
+                  <ion-icon class="coeur" slot="icon-only" name="heart"></ion-icon>
+                </ion-button>
+              </ion-fab>
+            </div>
+            <ion-fab horizontal="end">
+              <ion-fab-button color="dark">
+                <ion-icon name="caret-up-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </div>
+        </ion-card>
+      </div>
+      <div class="contenu">
+      
+        <ion-card>
+          <swiper-container [pagination]="{ clickable: true }">
+            <swiper-slide>
+              <img src="./assets/alpha (3).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (4).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (1).jpeg" alt="">
+            </swiper-slide>
+          </swiper-container>
+      
+          <div class="alignTxt">
+            <p><ion-icon name="pin-outline"></ion-icon>Bar restaurant</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="flag-outline"></ion-icon>Chez alpha</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="location"></ion-icon>Centre ville</p>
+            <div class="like">
+              <ion-fab class="cercle" slot="fixed" vertical="top" horizontal="end">
+                <ion-button (click)="toggleLike" fill="clear" [color]="isLiked ? 'danger' : 'medium'">
+                  <ion-icon class="coeur" slot="icon-only" name="heart"></ion-icon>
+                </ion-button>
+              </ion-fab>
+            </div>
+            <ion-fab horizontal="end">
+              <ion-fab-button color="dark">
+                <ion-icon name="caret-up-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </div>
+        </ion-card>
+      </div>
+      <div class="contenu">
+      
+        <ion-card>
+          <swiper-container [pagination]="{ clickable: true }">
+            <swiper-slide>
+              <img src="./assets/alpha (2).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (1).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/pexels-darya-sannikova-17501696.jpg" alt="">
+            </swiper-slide>
+          </swiper-container>
+      
+          <div class="alignTxt">
+            <p><ion-icon name="pin-outline"></ion-icon>Bar restaurant</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="flag-outline"></ion-icon>Chez alpha</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="location"></ion-icon>Centre ville</p>
+            <div class="like">
+              <ion-fab class="cercle" slot="fixed" vertical="top" horizontal="end">
+                <ion-button (click)="toggleLike" fill="clear" [color]="isLiked ? 'danger' : 'medium'">
+                  <ion-icon class="coeur" slot="icon-only" name="heart"></ion-icon>
+                </ion-button>
+              </ion-fab>
+            </div>
+            <ion-fab horizontal="end">
+              <ion-fab-button color="dark">
+                <ion-icon name="caret-up-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </div>
+        </ion-card>
+      </div>
+      <div class="contenu">
+      
+        <ion-card>
+          <swiper-container [pagination]="{ clickable: true }">
+            <swiper-slide>
+              <img src="./assets/alpha (4).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/pexels-darya-sannikova-17501696.jpg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (1).jpeg" alt="">
+            </swiper-slide>
+          </swiper-container>
+      
+          <div class="alignTxt">
+            <p><ion-icon name="pin-outline"></ion-icon>Bar restaurant</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="flag-outline"></ion-icon>Chez alpha</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="location"></ion-icon>Centre ville</p>
+            <div class="like">
+              <ion-fab class="cercle" slot="fixed" vertical="top" horizontal="end">
+                <ion-button (click)="toggleLike" fill="clear" [color]="isLiked ? 'danger' : 'medium'">
+                  <ion-icon class="coeur" slot="icon-only" name="heart"></ion-icon>
+                </ion-button>
+              </ion-fab>
+            </div>
+            <ion-fab horizontal="end">
+              <ion-fab-button color="dark">
+                <ion-icon name="caret-up-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </div>
+        </ion-card>
+      </div>
+      <div class="contenu">
+      
+        <ion-card>
+          <swiper-container [pagination]="{ clickable: true }">
+            <swiper-slide>
+              <img src="./assets/alpha (1).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (2).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/pexels-darya-sannikova-17501696.jpg" alt="">
+            </swiper-slide>
+          </swiper-container>
+      
+          <div class="alignTxt">
+            <p><ion-icon name="pin-outline"></ion-icon>Bar restaurant</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="flag-outline"></ion-icon>Chez alpha</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="location"></ion-icon>Centre ville</p>
+            <div class="like">
+              <ion-fab class="cercle" slot="fixed" vertical="top" horizontal="end">
+                <ion-button (click)="toggleLike" fill="clear" [color]="isLiked ? 'danger' : 'medium'">
+                  <ion-icon class="coeur" slot="icon-only" name="heart"></ion-icon>
+                </ion-button>
+              </ion-fab>
+            </div>
+            <ion-fab horizontal="end">
+              <ion-fab-button color="dark">
+                <ion-icon name="caret-up-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </div>
+        </ion-card>
+      </div>
+      <div class="contenu">
+      
+        <ion-card>
+          <swiper-container [pagination]="{ clickable: true }">
+            <swiper-slide>
+              <img src="./assets/alpha (3).jpeg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/pexels-darya-sannikova-17501696.jpg" alt="">
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/alpha (1).jpeg" alt="">
+            </swiper-slide>
+          </swiper-container>
+      
+          <div class="alignTxt">
+            <p><ion-icon name="pin-outline"></ion-icon>Bar restaurant</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="flag-outline"></ion-icon>Chez alpha</p>
+          </div>
+          <div class="alignTxt">
+            <p><ion-icon name="location"></ion-icon>Centre ville</p>
+            <div class="like">
+              <ion-fab class="cercle" slot="fixed" vertical="top" horizontal="end">
+                <ion-button (click)="toggleLike()" fill="clear" [color]="isLiked ? 'danger' : 'medium'">
+                  <ion-icon class="coeur" slot="icon-only" name="heart"></ion-icon>
+                </ion-button>
+              </ion-fab>
+            </div>
+            <ion-fab horizontal="end">
+              <ion-fab-button color="dark">
+                <ion-icon name="caret-up-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </div>
+        </ion-card>
+      </div>
+    </ion-content>
+</div>

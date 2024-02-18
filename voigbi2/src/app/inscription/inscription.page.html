@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="test">
+    <p>Incription</p>
+  </div>
+
+  <div class="imgConnect">
+    <img src="./assets/connect.gif" height="250px" width="250px">
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="creation()">
+      <ion-input type="text" fill="solid" label="Nom" errorText="Invalid text" labelPlacement="floating" [(ngModel)]="nom" name="nom"></ion-input>
+      <br>
+      <ion-input type="text" fill="solid" errorText="Invalid text" label="Prenom" labelPlacement="floating" [(ngModel)]="prenom" name="prenom" password></ion-input>
+      <br>
+      <ion-input type="text" fill="solid" errorText="Invalid text" label="Email" labelPlacement="floating" [(ngModel)]="email"  name="email" email></ion-input>
+      <br>
+      <ion-input type="text" fill="solid" errorText="Invalid text" label="Adresse physique" labelPlacement="floating" [(ngModel)]="AdressePhysique" name="AdressePhysique" email></ion-input>
+      <br>
+      <ion-select label="Selectionné votre genre" label-placement="floating" fill="outline" [(ngModel)]="genre" name="genre">
+        <ion-select-option value="Homme">Homme</ion-select-option>
+        <ion-select-option value="Femme">Femme</ion-select-option>
+      </ion-select>
+      <br>
+      <ion-input type="password" fill="solid" label="Mot de passe" labelPlacement="floating"  errorText="Invalid password" password [(ngModel)]="mdp" name="mdp"></ion-input>
+      <br>
+      <ion-input type="password" fill="solid" label="Confirmer votre mot de passe" labelPlacement="floating"  errorText="Invalid password" password></ion-input>
+      <div class="btn">
+        <ion-button class="large btn2" (click)="creation()">Enregistrer</ion-button>
+      </div>
+      <div class="hr-with-text btn">
+        <span [routerLink]="['/connexion']" button>j'ai déjà un compte</span>
+      </div>
+    </form>
+  </div>
+</ion-content>
